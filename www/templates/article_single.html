@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<p><a href="/">Index</a></p>
+
+<h1>{{ article.title }}</h1>
+
+{% if article.cover %}
+    <img src="{{ article.cover.url }}" alt="Article Image">
+{% endif %}
+
+<div>
+    {{ article.content | linebreaks}}
+</div>
+
+<p>{{ article.category.title }}</p>
+
+<p>{% for tag in article.tags.all %} {{tag.word}} {% endfor %}</p>
+{% endblock content %}

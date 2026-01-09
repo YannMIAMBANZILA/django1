@@ -19,10 +19,11 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from www import views
+from django.urls import include
 
 
 urlpatterns = [
-    path('', views.home),
+    path('', include('www.urls')),
     path('admin/', admin.site.urls),
 ]
 
